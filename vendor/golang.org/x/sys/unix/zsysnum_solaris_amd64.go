@@ -2,10 +2,12 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-// +build windows
-// +build !go1.3
+// +build amd64,solaris
 
-package svc
+package unix
 
-// from go12.c
-func getServiceMain(r *uintptr)
+// TODO(aram): remove these before Go 1.3.
+const (
+	SYS_EXECVE = 59
+	SYS_FCNTL  = 62
+)
